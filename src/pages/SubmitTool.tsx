@@ -205,7 +205,7 @@ export default function SubmitTool() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 p-6 bg-muted/30 rounded-lg"
+            className="mt-8 p-6 bg-muted/30 dark:bg-muted/10 rounded-lg"
           >
             <h3 className="font-semibold mb-2">Review Process</h3>
             <p className="text-sm text-muted-foreground mb-4">

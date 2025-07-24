@@ -37,7 +37,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="relative overflow-hidden hero-gradient">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ export default function About() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-muted/30 dark:bg-muted/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -162,7 +162,7 @@ export default function About() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-muted/30 dark:bg-muted/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

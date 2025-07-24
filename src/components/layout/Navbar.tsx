@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Search, Menu, X, Sparkles } from 'lucide-react'
+import { Search, Menu, X, Sparkles, Sun, Moon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { useTheme } from '@/hooks/useTheme'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -16,6 +17,7 @@ const navLinks = [
 export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState('')
   const location = useLocation()
+  const { theme, toggleTheme } = useTheme()
 
   const isActive = (href: string) => {
     if (href === '/') return location.pathname === '/'
@@ -61,7 +63,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Search Bar */}
+          {/* Search Bar & Theme Toggle */}
           <div className="hidden sm:flex items-center space-x-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -73,6 +75,19 @@ export default function Navbar() {
                 className="w-64 pl-9 pr-4"
               />
             </div>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="h-9 w-9"
+            >
+              {theme === 'light' ? (
+                <Moon className="h-4 w-4" />
+              ) : (
+                <Sun className="h-4 w-4" />
+              )}
+              <span className="sr-only">Toggle theme</span>
+            </Button>
           </div>
 
           {/* Mobile Menu */}
@@ -101,6 +116,22 @@ export default function Navbar() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="pl-9"
                   />
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-medium text-muted-foreground">Theme</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={toggleTheme}
+                    className="h-9 w-9"
+                  >
+                    {theme === 'light' ? (
+                      <Moon className="h-4 w-4" />
+                    ) : (
+                      <Sun className="h-4 w-4" />
+                    )}
+                  </Button>
                 </div>
 
                 <nav className="flex flex-col space-y-4">

@@ -68,8 +68,8 @@ export default function Homepage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5">
-        <div className="absolute inset-0 bg-grid-black/[0.02] bg-[size:20px_20px]" />
+      <section className="relative overflow-hidden hero-gradient">
+        <div className="absolute inset-0 bg-grid-black/[0.02] dark:bg-grid-white/[0.02] bg-[size:20px_20px]" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -201,7 +201,7 @@ export default function Homepage() {
       )}
 
       {/* Main Tools Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-muted/30 dark:bg-muted/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 space-y-4 sm:space-y-0">
             <div>
